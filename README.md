@@ -2,14 +2,10 @@
 
 This repository is work in progress!
 
+This repository contains an docker-compose file to run a spigot Minecraft server on an raspberry pi.
+
 ## TODO's
-* Add spigot latest downloader
-* Add builder
+* Add builder in compose
+  * Add spigot latest downloader
   * `java -jar BuildTools.jar`
-* Renew the Dockerfile
-  * Use an jre image instead?
-  * Set `JAVA_OPTS` in environment
-* Build a CI/CD pipeline
-  * upload image to dockerhub
-  * report build status
 * Write a proper `README.md`
