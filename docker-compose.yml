@@ -1,9 +1,17 @@
-version: '2'
+version: '2.4'
 
 services:
   minecraft:
-    image: minecraft-server
+    container_name: minecraft-server
+    image: openjdk:latest
+    platform: linux/arm64/v8
+    restart: always
     ports:
-    - '25565:25565'
+    - 25565:25565
+    cpus: 3 # 3 of 4 is 75%
+    environment:
+    - JAVA_OPTS=-Xmx3072M -Xms3072M
+    command: ["java", "-jar", "spigot-1.16.4.jar", "nogui"]
+    working_dir: /minecraft
     volumes:
-    - './server:/minecraft'
+    - ./server:/minecraft
